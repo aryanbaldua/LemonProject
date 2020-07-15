@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Form from './components/form';
 import Navbar from './components/navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Nav2 from './components/nav';
+import home from './components/home';
+import about from './components/about';
+
 function App() {
   return (
     <div>
    <BrowserRouter>
     <div>
-      <Navigation />
+      <Navbar></Navbar>
         <Switch>
-         <Route path="/" component={Navbar} exact/>
+         <Route path="/" component={home} exact/>
          <Route path="/Form" component={Form}/>
+         <Route path="/about" component={about}/>
         <Route component={Error}/>
        </Switch>
     </div> 
   </BrowserRouter>
-  <Nav2></Nav2></div>
+  </div>
   );
 }
 

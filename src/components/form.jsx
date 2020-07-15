@@ -4,29 +4,34 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 class Navbar extends Component {
   render() {
+    var divStyle = {
+      margin: 20,
+      paddingTop: 10,
+    };
+
     return (
-      <div>
+      <div style={divStyle}>
         <Form>
           <Form.Row>
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+            <Form.Group as={Col} controlId="formGridName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="name" placeholder="Name" />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+            <Form.Group as={Col} controlId="formGridPhone">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control type="phone" placeholder="Enter Phone Number" />
             </Form.Group>
           </Form.Row>
+
+          <Form.Group controlId="formGridEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+          </Form.Group>
 
           <Form.Group controlId="formGridAddress1">
             <Form.Label>Address</Form.Label>
             <Form.Control placeholder="1234 Main St" />
-          </Form.Group>
-
-          <Form.Group controlId="formGridAddress2">
-            <Form.Label>Address 2</Form.Label>
-            <Form.Control placeholder="Apartment, studio, or floor" />
           </Form.Group>
 
           <Form.Row>
@@ -39,7 +44,7 @@ class Navbar extends Component {
               <Form.Label>State</Form.Label>
               <Form.Control as="select" defaultValue="Choose...">
                 <option>Choose...</option>
-                <option>...</option>
+                <option>CA</option>
               </Form.Control>
             </Form.Group>
 
@@ -48,10 +53,6 @@ class Navbar extends Component {
               <Form.Control />
             </Form.Group>
           </Form.Row>
-
-          <Form.Group id="formGridCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
 
           <Button variant="primary" type="submit">
             Submit
