@@ -5,6 +5,7 @@ import Navbar from './components/navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import home from './components/home';
 import about from './components/about';
+import bootstrapCarousel from './components/BootstrapCarousel';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
        </Switch>
     </div> 
   </BrowserRouter>
+  <bootstrapCarousel></bootstrapCarousel>
   </div>
   );
 }
