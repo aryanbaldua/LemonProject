@@ -3,7 +3,34 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 class Navbar extends Component {
+
+  //SART OF OUTLINE IS ******** END IS =========, THIS MEANS GET RID AFTER TESTING IS COMPLETE
+  //************************************ 
+  constructor(props){
+    super(props);
+    this.state = {
+      list: []
+    }
+  }
+  
+
+  componentDidMount() {
+    this.getList();
+  }
+
+  getList = () => {
+    fetch('/api/getList')
+    .then(res => res.json())
+    .then(list => this.setState({ list }))
+  }
+  //===================================
+
   render() {
+
+    //************************************
+    const { list } = this.state;
+    //====================================
+
     var divStyle = {
       margin: 20,
       paddingTop: 10,
@@ -58,6 +85,29 @@ class Navbar extends Component {
             Submit
           </Button>
         </Form>
+
+        {/* *********************************************************************************** */}
+        <h1>List of Items</h1>
+        {/* Check to see if any items are found*/}
+        {list.length ? (
+          <div>
+            {/* Render the list of items */}
+            {list.map((item) => {
+              return(
+                <div>
+                  {item}
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div>
+            <h2>No List Items Found</h2>
+          </div>
+        )
+      }
+      {/* ===================================================================================== */}
+
       </div>
     );
   }
