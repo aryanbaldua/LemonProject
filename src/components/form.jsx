@@ -3,34 +3,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 class Navbar extends Component {
-
-  //SART OF OUTLINE IS ******** END IS =========, THIS MEANS GET RID AFTER TESTING IS COMPLETE
-  //************************************ 
-  constructor(props){
-    super(props);
-    this.state = {
-      list: []
-    }
-  }
-  
-
-  componentDidMount() {
-    this.getList();
-  }
-
-  getList = () => {
-    fetch('/api/getList')
-    .then(res => res.json())
-    .then(list => this.setState({ list }))
-  }
-  //===================================
-
   render() {
-
-    //************************************
-    const { list } = this.state;
-    //====================================
-
     var divStyle = {
       margin: 20,
       paddingTop: 10,
@@ -53,7 +26,7 @@ class Navbar extends Component {
 
           <Form.Group controlId="formGridEmail">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control type="email" placeholder="Enter Email" />
           </Form.Group>
 
           <Form.Group controlId="formGridAddress1">
@@ -81,33 +54,21 @@ class Navbar extends Component {
             </Form.Group>
           </Form.Row>
 
+          <Form.Group controlId="formGridInfo">
+            <Form.Label>Details</Form.Label>
+            <Form.Control as="textarea" rows="4" type="info" placeholder="Enter Type of Fruit and Number of Trees etc." />
+          </Form.Group>
+
+          <Form.Group controlId="formGridAvailability">
+            <Form.Label>Availability</Form.Label>
+            <Form.Control type="availability" placeholder="Enter Availability" />
+          </Form.Group>
+        
+
           <Button variant="primary" type="submit">
             Submit
           </Button>
         </Form>
-
-        {/* *********************************************************************************** */}
-        <h1>List of Items</h1>
-        {/* Check to see if any items are found*/}
-        {list.length ? (
-          <div>
-            {/* Render the list of items */}
-            {list.map((item) => {
-              return(
-                <div>
-                  {item}
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <div>
-            <h2>No List Items Found</h2>
-          </div>
-        )
-      }
-      {/* ===================================================================================== */}
-
       </div>
     );
   }
