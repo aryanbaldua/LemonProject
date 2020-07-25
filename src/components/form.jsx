@@ -26,7 +26,7 @@ class Navbar extends Component {
 
           <Form.Group controlId="formGridEmail">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control type="email" placeholder="Enter Email" />
           </Form.Group>
 
           <Form.Group controlId="formGridAddress1">
@@ -53,6 +53,17 @@ class Navbar extends Component {
               <Form.Control />
             </Form.Group>
           </Form.Row>
+
+          <Form.Group controlId="formGridInfo">
+            <Form.Label>Details</Form.Label>
+            <Form.Control as="textarea" rows="4" type="info" placeholder="Enter Type of Fruit and Number of Trees etc." />
+          </Form.Group>
+
+          <Form.Group controlId="formGridAvailability">
+            <Form.Label>Availability</Form.Label>
+            <Form.Control type="availability" placeholder="Enter Availability" />
+          </Form.Group>
+        
 
           <Button variant="primary" type="submit">
             Submit
