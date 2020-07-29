@@ -8,9 +8,25 @@ class Navbar extends Component {
       margin: 20,
       paddingTop: 10,
     };
+    
+    function handleClick() {
+      console.log("handleClick")
+      var requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'React POST Request Example' })
+    };
+    fetch('/api/add/user', requestOptions)
+        .then(response => response.json())
+        .then(data => this.setState({ postId: data.id }));
+
+    }
 
     return (
       <div style={divStyle}>
+        <Button variant="primary" onClick={handleClick}>
+          test 
+        </Button >
         <Form>
           <Form.Row>
             <Form.Group as={Col} controlId="formGridName">
