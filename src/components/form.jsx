@@ -3,11 +3,36 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 class Navbar extends Component {
-  render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+          name: "",
+          phone: "",
+          email: "",
+          address: "",
+          city: "",
+          state: "CA",
+          zip: "",
+          details: "",
+          availability: "",
+     
+        };
+        this.handleNameChange = this.handleNameChange.bind(this);
+
+      }
+     
+     handleNameChange(e){
+        this.setState({name: e.target.value});
+        console.log("name handle clicked", this.state.name);
+    }
+
+    render() {
     var divStyle = {
       margin: 20,
       paddingTop: 10,
     };
+
+    
     
     function handleClick() {
       console.log("handleClick")
@@ -31,7 +56,7 @@ class Navbar extends Component {
           <Form.Row>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="name" placeholder="Name" />
+              <Form.Control type="name" placeholder="Name"  value={this.state.name} onChange={this.handleNameChange}/>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridPhone">
