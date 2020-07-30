@@ -49,7 +49,7 @@ class Navbar extends Component {
 
     return (
       <div style={divStyle}>
-        <Button variant="primary" onClick={handleClick}>
+        <Button variant="primary" onClick={this.handleNameChange}>
           test 
         </Button >
         <Form>
