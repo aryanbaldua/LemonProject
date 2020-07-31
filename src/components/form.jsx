@@ -99,9 +99,7 @@ class Navbar extends Component {
 
     return (
       <div style={divStyle}>
-        <Button variant="primary" onClick={this.handleClick}>
-          test 
-        </Button >
+       
         <Form>
           <Form.Row>
             <Form.Group as={Col} controlId="formGridName">
@@ -145,9 +143,9 @@ class Navbar extends Component {
             </Form.Group>
           </Form.Row>
 
-          <Form.Group controlId="formGridInfo">
+          <Form.Group controlId="formGridDetails">
             <Form.Label>Details</Form.Label>
-            <Form.Control as="textarea" rows="4" type="info" placeholder="Enter Type of Fruit and Number of Trees etc."  value={this.state.details} onChange={this.handledetailsChange} />
+            <Form.Control as="textarea" rows="4" type="details" placeholder="Enter Type of Fruit and Number of Trees etc."  value={this.state.details} onChange={this.handleDetailsChange} />
           </Form.Group>
 
           <Form.Group controlId="formGridAvailability">
@@ -155,10 +153,10 @@ class Navbar extends Component {
             <Form.Control type="availability" placeholder="Enter Availability"  value={this.state.availability} onChange={this.handleAvailabilityChange}/>
           </Form.Group>
         
-
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
+          <Button variant="primary" onClick={this.handleClick}>
+          Submit
+        </Button >
+          
         </Form>
       </div>
     );
