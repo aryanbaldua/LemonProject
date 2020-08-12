@@ -1,7 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import Alert from 'react-bootstrap/Alert';
+
+
 class Navbar extends Component {
     constructor(props) {
         super(props);
@@ -73,9 +76,11 @@ class Navbar extends Component {
       this.setState({availability: e.target.value});
       console.log("availability handle clicked", this.state.availability);
     }
-
+    
     handleClick() {
       console.log("handleClick", this.state.name);
+      
+ 
       var requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -85,6 +90,8 @@ class Navbar extends Component {
     fetch('/api/add/user', requestOptions)
         .then(response => response.json())
         .then(data => this.setState({ postId: data.id }));
+
+        alert("Your form has been submitted!");
 
     }
     render() {
